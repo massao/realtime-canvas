@@ -1,0 +1,9 @@
+doctype html
+html
+	head
+		title= data.title
+		link(rel='stylesheet', href='/css/global.css')
+	body(class=data.bc)
+		block content
+		script(src="/socket.io/socket.io.js")
+		script(src="/javascript/global.js")
