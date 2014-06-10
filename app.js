@@ -15,6 +15,10 @@ app.get('/', routes.index);
 
 io.sockets.on('connection', function(socket) {
 	console.log('a user connected');
+	socket.on('drawing', function(data) {
+		console.log('drawing');
+		socket.broadcast.emit('drawing', data);
+	});
 });
 
 http.listen(app.get('port'), function() {
