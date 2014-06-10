@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "socket.io with canvas",
   "scripts": {
-    "start": "grunt compile && node app.js"
+    "start": "node app.js"
   },
   "keywords": [
     "nodejs",
