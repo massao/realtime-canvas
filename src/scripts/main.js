@@ -24,9 +24,11 @@ $(document).ready(function() {
 			data.type = e.type;
 			ctx.lineTo(e.pageX - offset.left, e.pageY - offset.top);
 			ctx.stroke();
-			data.x = e.pageX - offset.left;
-			data.y = e.pageY - offset.top;
-			socket.emit('drawing', data);
+			if(data.x != e.pageX - offset.left && data.y != e.pageY - offset.top) {
+				data.x = e.pageX - offset.left;
+				data.y = e.pageY - offset.top;
+				socket.emit('drawing', data);
+			}
 		}
 	};
 	el.onmouseup = function(e) {
